@@ -4,7 +4,7 @@ import os
 import re
 
 # Path to the text file you want to convert to speech
-input_file = "/home/oskar/notes/Gielczyk.md"
+input_file = "..."
 
 # Generate a file name for the audio output (without .md extension)
 file_name = os.path.splitext(os.path.basename(input_file))[0] + ".mp3"

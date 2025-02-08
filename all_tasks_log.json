@@ -1,0 +1,77 @@
+[
+    {
+        "status": "not done",
+        "task": "hi hello testing",
+        "priority": "high"
+    },
+    {
+        "status": "not done",
+        "task": "sup",
+        "priority": "medium"
+    },
+    {
+        "status": "not done",
+        "task": "oh oh",
+        "priority": "none"
+    },
+    {
+        "status": "not done",
+        "task": "ah ah",
+        "priority": "none"
+    },
+    {
+        "status": "not done",
+        "task": "oh ah",
+        "priority": "high"
+    },
+    {
+        "status": "not done",
+        "task": "ohhhh fucke me",
+        "priority": "high"
+    },
+    {
+        "status": "not done",
+        "task": "jezus",
+        "priority": "low"
+    },
+    {
+        "status": "not done",
+        "task": "please work",
+        "priority": "medium"
+    },
+    {
+        "status": "not done",
+        "task": "omg woooork",
+        "priority": "high"
+    },
+    {
+        "status": "not done",
+        "task": "musze zjesc zupe",
+        "priority": "low"
+    },
+    {
+        "status": "not done",
+        "task": "nauczyc sie matmy",
+        "priority": "high"
+    },
+    {
+        "status": "not done",
+        "task": "przerobi\u0107 jave",
+        "priority": "high"
+    },
+    {
+        "status": "not done",
+        "task": "nauczy\u0107 si\u0119 na ML",
+        "priority": "mid"
+    },
+    {
+        "status": "not done",
+        "task": "zrobi\u0107 lab 5 do fizika",
+        "priority": "medium"
+    },
+    {
+        "status": "not done",
+        "task": "fiut",
+        "priority": "low"
+    }
+]

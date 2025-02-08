@@ -1,0 +1,50 @@
+#!/bin/bash
+
+NOTES_DIR=~/notes
+PDF_DIR=~/notes/PDF
+mkdir -p "$NOTES_DIR"
+mkdir -p "$PDF_DIR"
+NOTE_PATH="$NOTES_DIR/$2.md"
+EDIT="$NOTES_DIR/$2"
+
+
+
+
+if [[ $1 == "new" ]]; then
+    if [ ! -f "$NOTE_PATH" ]; then
+        echo -e "# $2\n\n**Date:** $(date '+%Y-%m-%d')\n" >> "$NOTE_PATH"
+    fi
+    code "$NOTE_PATH"
+elif [[ $1 == "edit" ]]; then
+    if [ -f "$EDIT" ]; then
+        code "$EDIT"
+    else
+        echo "Note '$2' does not exist. Use 'note new $2' to create it."
+    fi
+elif [[ $1 == "convert" ]]; then
+    if [ -f "$EDIT" ]; then
+        pandoc "$EDIT" -o "$EDIT.pdf"
+	mv "$EDIT.pdf" "$PDF_DIR"
+	echo "File was sucesfully converted"
+    else
+	echo "hmm... something went wrong"
+    fi
+elif [[ $1 == "merge" && $3 == "all" ]]; then
+    MERGED_FILE="$NOTES_DIR/$2-merged.md"
+    FILES=$(find "$NOTES_DIR" -type f -name "$2*.md" | sort -n)
+    if [ -z "$FILES" ]; then
+        echo "No files found to merge."
+    else
+        cat $FILES > "$MERGED_FILE"
+        echo "Files merged into $MERGED_FILE"
+    fi    
+elif [[ $1 == "list" ]]; then
+    echo "Listing all notes:"
+    ls "$NOTES_DIR"
+
+elif [[ $1 == "help" ]]; then
+    echo -e "Commands:\n new <filename> - Create a new note\n edit <filename> - Edit an existing note \n convert <filename> - Converts filetype from md to pdf\n merge <filetype like> all - merges all files with certain name by date \nlist - List all notes \n help - Show this help message \n\n If smth brakes goto /usr/local/bin/note"
+    
+else
+    echo "Invalid command. Type 'note help' for help."
+fi
